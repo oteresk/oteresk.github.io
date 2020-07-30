@@ -662,7 +662,7 @@ a:hover, a:active {
     top: 7px;
     left: -35px ;
     z-index: 99;
-    width: 100px;
+    width: 10px;
     height: 20px;
     transform: rotate(45deg);
     background: #fff;
