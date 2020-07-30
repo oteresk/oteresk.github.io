@@ -636,7 +636,7 @@ a:hover, a:active {
 }
 
 .blog-page .blog-content .entry-content {
-    padding: 0px;
+    padding: 25px;
 }
 
 .blog-page .blog-content {
@@ -662,7 +662,7 @@ a:hover, a:active {
     top: 7px;
     left: -35px ;
     z-index: 99;
-    width: 10px;
+    width: 20px;
     height: 20px;
     transform: rotate(45deg);
     background: #fff;
