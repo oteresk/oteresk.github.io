@@ -313,6 +313,8 @@ a:hover, a:active {
     }
 }
 
+
+
 /*--------------------------------------------------------------
 # Scroll Down
 --------------------------------------------------------------*/
@@ -489,6 +491,7 @@ a:hover, a:active {
     margin-top: 20px;
     font-size: 2.25rem;
     font-family: 'Poppins', sans-serif;
+    font-size: 150px;
 }
 
 .single-portfolio .content-area .entry-content {
