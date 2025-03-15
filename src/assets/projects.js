@@ -13,7 +13,6 @@ import together4 from '../assets/images/projects/togetherAgain/screenshot-4.png'
 import together5 from '../assets/images/projects/togetherAgain/screenshot-5.png';
 import ronday1 from '../assets/images/projects/ronday/ronday-project.png';
 import ronday2 from '../assets/images/projects/ronday/ronday-one.gif';
-import ronday3 from '../assets/images/projects/ronday/ronday-two.gif';
 import ronday4 from '../assets/images/projects/ronday/ronday-three.gif';
 import ronday5 from '../assets/images/projects/ronday/ronday-four.gif';
 import ronday6 from '../assets/images/projects/ronday/ronday-five.gif';
@@ -104,7 +103,7 @@ export const PROJECTS = [
         url: 'https://www.youtube.com/watch?v=JM-9ac89hy4'
       }
     ],
-    images: [ronday1, ronday2, ronday3, ronday4, ronday5, ronday6]
+    images: [ronday1, ronday2, ronday4, ronday5, ronday6]
   },
   {
     title: 'Dark Age Asunder',
