@@ -63,7 +63,7 @@ export const PROJECTS = [
   // },
   {
     title: 'Boba Cat',
-    desc: "Make boba and prove you're the best milk tea shop in town! In this game, you take control and choose what ingredients to put into milk tea. Different combinations get different amounts of points! ", 
+    desc: "Make boba and prove you're the best milk tea shop in town! In this game, you take control and choose what ingredients to put into milk tea. Different combinations get different amounts of points! Student project for ART 108 at San Jose State University.", 
     links: [
       {
         type: 'itch',
@@ -74,7 +74,7 @@ export const PROJECTS = [
   },
   {
     title: 'SatiSciFi Virtual Concert',
-    desc: "Collaborative effort to display a virtual concert scene in Unity. ",
+    desc: "Student project to display a virtual concert scene in Unity for ART 109 at San Jose State University.",
     links: [
       {
         type: 'itch',
