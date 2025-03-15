@@ -1,93 +1,66 @@
-# ❗❗ Check out my current portfolio for a better UI and code: [wink](https://github.com/AmreshSinha/wink)
+# Created with React + Vite
 
-<h1 align="center"> GlassFolio ✨ | Dev Portfolio
-<br>
-<a href="https://github.com/AmreshSinha/glassfolio/blob/master/LICENSE"><img src="https://img.shields.io/github/license/AmreshSinha/glassfolio?color=blue"/></a> <a href="https://github.com/AmreshSinha/glassfolio/stargazers"><img src="https://img.shields.io/github/stars/AmreshSinha/glassfolio"></a>
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Currently, two official plugins are available:
 
-</h1>
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+# Uploading Assets
+- Images
+  - Upload assets to `src/assets/images`. Please be sure to import the file in the respective folder.
+  - Import image to correct file. Ex: `src/assets/experience.js` or `src/assets/projects.js`.
+  - Add imported image to correct object.
+    - Experience: Logo (circular): `logo`. Background image: `banner`.
+    - Projects: Upload list of images to `images`. The first image serves as thumbnail.
+- Information (Experience, Projects, etc).
+## Experience:
+Can add multiple roles to one experience. Alternatively, you can have multiple objects from the same company if you'd like to seperate dates.   
+  ```
+  import logo from '../assets/images/experience/logo.png';
+  import banner from '../assets/images/experience/banner.png';
+  {
+    title: "Title of Company",
+    logo: logo,
+    banner: banner,
+    roles:  [
+      {
+        role: "Title of First Role",
+        date: "October 2022 - July 2023"
+      },
+      {
+        role: "Title of Second Role",
+        date: "Date"
+      }
+    ]
+  },
+  ```
+## Projects:
+Can add multiple roles to one experience. Alternatively, you can have multiple objects from the same company if you'd like to seperate dates.   
+  ```
+  import thumbnail from '../assets/images/projects/projectName/thumbnail.png';
+  import img from '../assets/images/projects/projectName/img-1.png';
 
-<h2 align="center">
-Made with Pure HTML, CSS and JS<br>
-Inspired by <a href="https://github.com/saadpasta/developerFolio/">developerFolio</a>
-</h2>
+  {
+    title: 'Project Title',
+    desc: "Project description",
+    links: [
+      {
+        type: 'itch',
+        url: 'https://itch.com'
+      },
+      {
+        type: 'youtube',
+        url: 'https://youtube.com'
+      }
+    ],
+    images: [thumbnail, img]
+  }
+  ```
+# Updating Information
+Can update most information in `src/assets/constants.js`.
+  - Links (links that appear under your bio): `LINKS`
+  - Project Experience (your list of project experience skills): `PROJ_MAN`
+  - Software (your list of software skills): `SOFTWARE`
+  - Certificates (your list of obtained certificates): `CERTIFICATES` ***Note: Upload Certificate images here***
 
-<div style="display:flex; gap:5px;">
-    <div style="display: inline-block;">
-        <img width="50%" src="assets/website-screen1.png"/><img width="50%" src="assets/website-screen3.png"/>
-    </div>
-</div>
-<div style="display:flex; gap:5px;">
-    <div style="display: inline-block;">
-        <img width="50%" src="assets/website-screen2.png"/><img width="50%" src="assets/website-screen4.png"/>
-    </div>
-</div>
-
-<p align="center"><strike>Currently Not Mobile Responsive!</strike> Now it is :)</p>
-
-<p align="center">Change the content in <code>index.html</code> and you are good to go :)</p>
-
-<p align="center">If you want to contribute head over to <a href="https://github.com/AmreshSinha/glassfolio/issues">Issues</a> first ;)</p>
-<p align="center">Feel free to open a <a href="https://github.com/AmreshSinha/glassfolio/issues">Pull Request</a> if you added something new to it!</p>
-
-## Sections
-✔️ Summary and About me\
-✔️ Skills\
-✔️ Work Experience\
-✔️ Open Source Projects Connected with Github\
-😃 Feel Free to contribute ;)
-
-Live Version: https://AmreshSinha.github.io/glassFolio/
-
-## Linking your github repo
-This project utilises the modified version of <a href="https://github.com/Tarptaeya/repo-card">Repo-Card</a> which utilises Github Free API to fetch details.
-
-Keep in mind that the Free API is Rate Limited.
-
-Format:
-
-```
-<div class="repo-card" data-repo="username/repository"></div>
-```
-
-Just change ```username``` and ```repository``` to yours and you are good to go!
-
-## Features
-- GlassMorphic UI
-- Supports FontAwesome
-- Supports <a href="https://github.com/devicons/devicon">DevIcon</a>
-- Supports Iconify
-
-## Author
-
-👤 **Amresh Sinha**
-
-- Github: [@AmreshSinha](https://github.com/AmreshSinha/)
-- LinkedIn: [@AmreshSinha](https://www.linkedin.com/in/amresh-sinha/)
-- Portfolio: [amreshsinha.vercel.app](https://amreshsinha.vercel.app/)
-
-## 🤝 Contributing
-
-Your awesome contribution will make this project better, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/AmreshSinha/glassFolio/issues).
-
-
-## 📝 License
-
-This project is under [MIT License](https://github.com/AmreshSinha/glassFolio/blob/main/LICENSE).
-
-## Special mentions
-- <a href="https://github.com/saadpasta/developerFolio/">hsaadpasta/developerFolio</a>
-- <a href="https://github.com/Tarptaeya/repo-card">Tarptaeya/repo-card</a>
-
-
-## Project Contributors⭐ 
-
-<table align="center">
-<tr>
-<td>
-<a href="https://github.com/AmreshSinha/glassFolio/graphs/contributors" align="center">
-  <img src="https://contrib.rocks/image?repo=AmreshSinha/glassFolio" /> 
-</a>
-</td>
-</tr>
-</table>
