@@ -9,6 +9,45 @@ import jgpLogo from '../assets/images/experience/jgpLogo.png';
 
 export const EXPERIENCE = [
   {
+    title: "Wicked Fox Games",
+  logo: wfLogo,
+  logoBgColor: 'white',
+  banner: wfBanner,
+  bannerBgColor: 'black',
+  roles: [
+    {
+      role: "Associate Producer",
+      date: "May 2024 - Present"
+    }
+  ]
+},
+    {
+    title: "Jim Gray Productions",
+    logo: jgpLogo,
+    logoBgColor: '#232325',
+    banner: jgpBanner,
+    bannerBgColor: '#232325',
+    roles: [
+      {
+        role: "Production Coordinator",
+        date: "July 2024 - October 2024"
+      }
+    ]
+  },
+    {
+    title: "Indie MEGABOOTH",
+    logo: imbLogo,
+    logoBgColor: '#f7f3eb',
+    banner: imbBanner,
+    bannerBgColor: '#f7f3eb',
+    roles: [
+      {
+        role: "Assistant Producer",
+        date: "July 2023 – August 2023"
+      }
+    ]
+  },
+  {
     title: "Ronday Technologies",
     logo: rondayLogo,
     logoBgColor: '#f4f1ea',
@@ -25,43 +64,4 @@ export const EXPERIENCE = [
       }
     ]
   },
-  {
-    title: "Indie MEGABOOTH",
-    logo: imbLogo,
-    logoBgColor: '#f7f3eb',
-    banner: imbBanner,
-    bannerBgColor: '#f7f3eb',
-    roles: [
-      {
-        role: "Assistant Producer",
-        date: "July 2023 – August 2024"
-      }
-    ]
-  },
-  {
-    title: "Jim Gray Productions",
-    logo: jgpLogo,
-    logoBgColor: '#232325',
-    banner: jgpBanner,
-    bannerBgColor: '#232325',
-    roles: [
-      {
-        role: "Production Coordinator",
-        date: "July 2024 - October 2024"
-      }
-    ]
-  },
-  {
-    title: "Wicked Fox Games",
-  logo: wfLogo,
-  logoBgColor: 'white',
-  banner: wfBanner,
-  bannerBgColor: 'black',
-  roles: [
-    {
-      role: "Associate Producer",
-      date: "May 2024 - Present"
-    }
-  ]
-},
 ];
