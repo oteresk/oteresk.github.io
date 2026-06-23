@@ -17,7 +17,7 @@ export const EXPERIENCE = [
   roles: [
     {
       role: "Associate Producer",
-      date: "May 2024 - Present"
+      date: "May 2024 - April 2026"
     }
   ]
 },
@@ -56,12 +56,8 @@ export const EXPERIENCE = [
     roles: [
       {
         role: "Assistant Producer",
-        date: "October 2022 - July 2023"
+        date: "May 2022 - July 2023"
       },
-      {
-        role: "QA Tester",
-        date: "May 2022 - October 2022"
-      }
     ]
   },
 ];
