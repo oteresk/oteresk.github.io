@@ -1,33 +1,18 @@
+:root {
+  font-family: Poppins, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
-  display: flex;
-  /* place-items: center; */
+  padding: 0;
   min-width: 320px;
   min-height: 100vh;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  color: black;
-}
-
-.slick-track {
-  display: flex;
-  justify-content: center;
-}
-
-.slick-slide > div {
-  display: grid;
-  place-items: center;
-  width: 80%;
-  margin-top: 50px;
-  margin: auto;
-  height: 500px;
-  padding: 0px;
-}
-
-.slick-slide img {
-	width: auto !important;
-	height: 500px;
-  display: flex;
 }

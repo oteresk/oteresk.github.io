@@ -1,49 +1,68 @@
 import { useState } from 'react';
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Chip, Typography } from '@mui/material';
 import { ProjectPopUp } from './ProjectPopUp';
-import { onHoverEnlarge } from '../assets/styles';
+import { cardBox, onHoverEnlarge, pill } from '../assets/styles';
 
-export const ProjectCard = ({proj}) => {
+export const ProjectCard = ({ proj, compact = false }) => {
   const [openDialog, setOpenDialog] = useState(false);
+  const cover = proj.media?.[0];
+  const coverSrc = cover?.type === 'video' ? cover.poster : cover?.src;
 
   return (
     <Box
       sx={{
-        borderRadius: '10px',
-        backgroundColor: 'rgba(225, 225, 225, 0.1)',
-        boxShadow: '0 10px 30px -15px rgba(0, 0, 0, 0.2)',
-        border: '1px solid rgba(255, 255, 255, 0.25)',
-        padding: {xs: '10px', lg: '16px'},
+        ...cardBox,
+        padding: { xs: '10px', lg: '14px' },
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        width: {xs: '340px', xxl: '400px'},
-        ...onHoverEnlarge
+        textAlign: 'left',
+        width: '100%',
+        ...onHoverEnlarge,
       }}
     >
-      <div>
-        <Box 
-          onClick={() => setOpenDialog(true)}
-          sx={{'&:hover': {cursor: 'pointer'}}}
-        >
-          <Box 
-           component="img"
-           src={`${proj?.images && proj?.images[0]}`} 
-           sx={{
-             height: {xs: '180px', xxl: '220px'},
-             width:'100%', 
-             borderRadius: '10px',
-             objectFit:'cover'
-           }}
-           />
+      <Box>
+        <Box onClick={() => setOpenDialog(true)} sx={{ '&:hover': { cursor: 'pointer' } }}>
+          <Box
+            component="img"
+            src={coverSrc}
+            alt={`${proj.title} screenshot`}
+            loading="lazy"
+            sx={{
+              height: compact ? '140px' : { xs: '170px', xxl: '200px' },
+              width: '100%',
+              borderRadius: '10px',
+              objectFit: 'cover',
+              display: 'block',
+            }}
+          />
         </Box>
-        <Typography variant='title2'>{proj.title}</Typography>
-      </div>
-      <div>
-        <Button variant="contained" onClick={() => setOpenDialog(true)}>More Info</Button>
-      </div>
-     
-      <ProjectPopUp proj={proj} openDialog={openDialog} setOpenDialog={setOpenDialog}/>
+
+        <Box sx={{ display: 'flex', gap: '6px', flexWrap: 'wrap', mt: '12px' }}>
+          <Chip label={proj.status} size="small" sx={pill} />
+          {proj.platforms?.map((p) => (
+            <Chip key={p} label={p} size="small" sx={pill} />
+          ))}
+        </Box>
+
+        <Typography variant="title2" component="h3" sx={{ display: 'block', mt: '10px' }}>
+          {proj.title}
+        </Typography>
+        <Typography variant="statLabel" component="p">
+          {proj.role}
+        </Typography>
+        <Typography variant="meta" component="p">
+          {proj.org} · {proj.year}
+        </Typography>
+      </Box>
+
+      <Box sx={{ mt: '14px' }}>
+        <Button variant="contained" onClick={() => setOpenDialog(true)}>
+          More Info
+        </Button>
+      </Box>
+
+      <ProjectPopUp proj={proj} openDialog={openDialog} setOpenDialog={setOpenDialog} />
     </Box>
   );
 };

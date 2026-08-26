@@ -1,52 +1,51 @@
-import './App.css'
-import React from 'react';
+import './App.css';
 import { Box } from '@mui/material';
 import { NavBar } from './components/NavBar';
 import { Hero } from './sections/Hero';
+import { SubHero } from './sections/SubHero';
 import { Experience } from './sections/Experience';
 import { Projects } from './sections/Projects';
-import { SubHero } from './sections/SubHero';
-import { StyledBox } from './components/StyledBox';
+import { CaseStudy } from './sections/CaseStudy';
 import { Certificates } from './sections/Certificates';
+import { StyledBox } from './components/StyledBox';
 
 function App() {
-
   return (
-    <Box 
+    <Box
       sx={{
-        display:'flex', 
+        display: 'flex',
         flexDirection: 'column',
         gap: '20px',
-        width: '100vw',
-        justifyContent:'center', 
-        alignItems: 'center', 
-        background: 'radial-gradient(circle,rgba(170, 170, 170, 1) 0%,rgba(255, 255, 255, 1) 100%)'
+        width: '100%',
+        alignItems: 'center',
+        background: 'radial-gradient(circle, rgba(170,170,170,1) 0%, rgba(255,255,255,1) 100%)',
+        minHeight: '100vh',
       }}
     >
-      <section id='home'></section>
-      <NavBar/>
-      <StyledBox 
+      <Box component="span" id="home" />
+      <NavBar />
+      <StyledBox
+        component="main"
         sx={{
-          width: '90vw',
-          // padding: '50px 100px',
+          width: '92%',
+          maxWidth: '1400px',
           mb: '40px',
-          display:'flex',
+          display: 'flex',
           flexDirection: 'column',
-          gap: 2,
-          background: 'rgba(255, 255, 255, 0.5)'
+          gap: '56px',
+          background: 'rgba(255, 255, 255, 0.5)',
+          padding: { xs: '20px', md: '32px' },
         }}
       >
-        
         <Hero />
         <SubHero />
-        <section id='experience'>
-          <Experience />
-        </section>
+        <Experience />
         <Projects />
+        <CaseStudy />
         <Certificates />
       </StyledBox>
     </Box>
-  )
+  );
 }
 
-export default App
+export default App;

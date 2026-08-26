@@ -1,136 +1,87 @@
-import { useState } from "react";
-import '../App.css'
-import { Link, animateScroll as scroll } from 'react-scroll';
-import { Box, Button, IconButton, Menu, MenuItem, Typography } from "@mui/material";
+import { useState } from 'react';
+import { Link } from 'react-scroll';
+import { Box, Button, IconButton, Menu, MenuItem, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { StyledBox } from "../components/StyledBox";
-import { NAV } from "../assets/constants";
-import { roundWhiteButton } from "../assets/styles";
+import { StyledBox } from './StyledBox';
+import { NAV } from '../assets/constants';
+import { roundWhiteButton } from '../assets/styles';
 
-export const NavBar = (() => {
+// One offset for every link - the sticky bar is a fixed height, so per-link
+// tuning was only ever compensating for the ragged card layout.
+const NAV_OFFSET = -110;
+
+export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [activeSection, setActiveSection] = useState(null);
-
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
 
   return (
     <StyledBox
+      component="nav"
       sx={{
         position: 'sticky',
         top: '10px',
-        width: '90vw',
+        width: '92%',
+        maxWidth: '1400px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '20px',
+        padding: '16px 20px',
         gap: 2,
         background: 'rgba(255, 255, 255, 0.5)',
         boxShadow: '0 0 1rem 0 rgba(0, 0, 0, 0.05)',
         backdropFilter: 'blur(1rem)',
         border: '1px solid rgba(255, 255, 255, 0.25)',
-        zIndex: 100
+        zIndex: 100,
       }}
     >
-      <Typography variant="h2" noWrap component="a" href="#app-bar-with-responsive-menu"
-        sx={{
-          mr: 2,
-          display: 'flex',
-          color: 'inherit',
-          textDecoration: 'none',
-        }}
-      >
-        David Koster
-      </Typography>
+      <Link to="home" smooth duration={300} offset={NAV_OFFSET} style={{ cursor: 'pointer' }}>
+        <Typography variant="h2" noWrap sx={{ color: 'inherit', textDecoration: 'none', fontSize: { xs: '1.3rem', md: '2rem' } }}>
+          David Koster
+        </Typography>
+      </Link>
 
-      <Box sx={{ width: 'auto', display: { xs: 'flex', md: 'none' } }}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="menu-appbar"
-          aria-haspopup="true"
-          onClick={handleOpenNavMenu}
-          color="inherit"
-        >
+      <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+        <IconButton size="large" aria-label="Open navigation menu" onClick={(e) => setAnchorElNav(e.currentTarget)} color="inherit">
           <MenuIcon />
         </IconButton>
         <Menu
           id="menu-appbar"
           anchorEl={anchorElNav}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'left',
-          }}
-          keepMounted
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'left',
-          }}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+          transformOrigin={{ vertical: 'top', horizontal: 'left' }}
           open={Boolean(anchorElNav)}
-          onClose={handleCloseNavMenu}
+          onClose={() => setAnchorElNav(null)}
           sx={{ display: { xs: 'block', md: 'none' } }}
         >
           {NAV.map((page) => (
-            <MenuItem
-              key={page.name}
-              onClick={handleCloseNavMenu}
-            >
-              <Link
-                to={page?.link}
-                smooth={true}
-                duration={500}
-                activeClass="active"
-                spy={true}
-                className={activeSection === page?.link ? 'active' : ''}
-              // onClick={() => handleSectionClick(page)}
-              >
+            <MenuItem key={page.name} onClick={() => setAnchorElNav(null)}>
+              <Link to={page.link} smooth duration={500} offset={NAV_OFFSET} spy activeClass="active">
                 {page.name}
               </Link>
-              {/* <Typography variant='navItem' sx={{ textAlign: 'center' }}></Typography> */}
             </MenuItem>
           ))}
         </Menu>
       </Box>
 
-      <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '10px' }}>
+      <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '4px', flexWrap: 'nowrap' }}>
         {NAV.map((page) => (
-          <Link
-            to={page?.link}
-            smooth={true}
-            duration={300}
-            activeClass="active"
-            spy={true}
-            offset={page?.link == 'certificates' ? -100 : -350}
-          >
-
+          <Link key={`nav_link::${page.name}`} to={page.link} smooth duration={300} offset={NAV_OFFSET} spy activeClass="active">
             <Button
-              key={`nav_link::${page.name}`}
-              variant='outlined'
-              size='small'
+              variant="outlined"
+              size="small"
               sx={{
                 color: 'black',
-                fontSize: '16px',
-                width: '125px',
+                fontSize: '15px',
+                whiteSpace: 'nowrap',
+                px: '14px',
                 borderRadius: '30px',
-                '&:hover': {
-                  ...roundWhiteButton,
-                  backgroundColor: 'white'
-                }
+                '&:hover': { ...roundWhiteButton, width: 'auto', backgroundColor: 'white' },
               }}
             >
               {page.name}
             </Button>
           </Link>
-
         ))}
       </Box>
     </StyledBox>
   );
-});
+};
