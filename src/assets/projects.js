@@ -82,9 +82,10 @@ export const PROJECTS = [
       'Learn, customize and play 8 traditional mahjong rulesets, from Hong Kong and Taiwanese to Japanese Riichi. Interactive tutorials for beginners, house-rule customization, and solo play or online multiplayer.',
     contribution: [
       'Building and self-publishing the game solo: design, production, build pipeline and store presence.',
-      'Shipping eight rulesets in one game (Hong Kong, Riichi, Guobiao, Taiwanese, Sichuan, Singaporean, Sanma and Korean), each with its own house rules.',
-      'Built online multiplayer on Steam and Epic Online Services alongside solo play against tiered bots.',
-      'Designed the interactive tutorials that teach mahjong from zero.',
+      'Shipping eight rulesets in one game (Hong Kong, Riichi, Guobiao, Taiwanese, Sichuan, Singaporean, Sanma and Korean), each with its own customizable house rules.',
+      'Built online cross-platform multiplayer for Steam and mobile on Epic Online Services, alongside solo play against tiered bots.',
+      'Designed step-by-step interactive tutorials and an in-game glossary of every ruleset’s hands and terms, so new players can learn from scratch.',
+      'Hired and directed contractors for the logo, music and localization.',
       'Running the launch: Steam page, trailer, localization and the marketing plan.',
     ],
     caveat: 'The game has not released yet; wishlists are open on Steam.',
