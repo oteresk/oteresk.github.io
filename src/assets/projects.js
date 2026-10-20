@@ -1,3 +1,15 @@
+import emj1 from './images/projects/everybodyMahjong/everybodymahjong.webp';
+import emj2 from './images/projects/everybodyMahjong/screenshot-1.webp';
+import emj3 from './images/projects/everybodyMahjong/screenshot-2.webp';
+import emj4 from './images/projects/everybodyMahjong/screenshot-3.webp';
+import emj5 from './images/projects/everybodyMahjong/screenshot-4.webp';
+import emj6 from './images/projects/everybodyMahjong/screenshot-5.webp';
+import emj7 from './images/projects/everybodyMahjong/screenshot-6.webp';
+import emj8 from './images/projects/everybodyMahjong/screenshot-7.webp';
+import emj9 from './images/projects/everybodyMahjong/screenshot-8.webp';
+import emj10 from './images/projects/everybodyMahjong/screenshot-9.webp';
+import emj11 from './images/projects/everybodyMahjong/screenshot-10.webp';
+
 import roe1 from './images/projects/riseOfElements/roe.webp';
 import roe2 from './images/projects/riseOfElements/screenshot-1.webp';
 import roe3 from './images/projects/riseOfElements/screenshot-2.webp';
@@ -57,6 +69,28 @@ const vid = (src, poster) => ({ type: 'video', src, poster });
   keep it to what David owned, not what the game is about.
 */
 export const PROJECTS = [
+  {
+    title: 'Everybody MAHJONG!',
+    role: 'Solo Developer & Publisher',
+    org: 'Solo',
+    year: '2026',
+    platforms: ['Steam'],
+    status: 'Coming soon',
+    heroFrame: emj3,
+    heroCaption: 'EVERYBODY MAHJONG! · STEAM',
+    pitch:
+      'Learn, customize and play 8 traditional mahjong rulesets, from Hong Kong and Taiwanese to Japanese Riichi. Interactive tutorials for beginners, house-rule customization, and solo play or online multiplayer.',
+    contribution: [
+      'Building and self-publishing the game solo: design, production, build pipeline and store presence.',
+      'Shipping eight rulesets in one game (Hong Kong, Riichi, Guobiao, Taiwanese, Sichuan, Singaporean, Sanma and Korean), each with its own house rules.',
+      'Built online multiplayer on Steam and Epic Online Services alongside solo play against tiered bots.',
+      'Designed the interactive tutorials that teach mahjong from zero.',
+      'Running the launch: Steam page, trailer, localization and the marketing plan.',
+    ],
+    caveat: 'The game has not released yet; wishlists are open on Steam.',
+    links: [{ type: 'steam', url: 'https://store.steampowered.com/app/5231140/Everybody_MAHJONG/' }],
+    media: [img(emj1), img(emj2), img(emj3), img(emj4), img(emj5), img(emj6), img(emj7), img(emj8), img(emj9), img(emj10), img(emj11)],
+  },
   {
     title: 'Rise of Elements',
     role: 'Creative Producer',

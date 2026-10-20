@@ -15,7 +15,7 @@ const CreditBand = () => (
       // Hidden on phones: stacked it ate the whole first screen before the name.
       // Project cards carry the game art on mobile instead.
       display: { xs: 'none', sm: 'grid' },
-      gridTemplateColumns: 'repeat(3, 1fr)',
+      gridTemplateColumns: `repeat(${BAND.length}, 1fr)`,
       position: 'relative',
       borderRadius: '1rem 1rem 0 0',
       overflow: 'hidden',
